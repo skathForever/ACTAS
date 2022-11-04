@@ -20,8 +20,9 @@ Route::get('/', function () {
 });
 
 
+Route::resource('/gamea', 'App\Http\Controllers\GameaController');
 
-Route::resource('gamea','App\Http\Controllers\GameaController');
+
 
 
 

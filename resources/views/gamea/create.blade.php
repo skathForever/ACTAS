@@ -2,21 +2,21 @@
 
 @section('contenido');
 
-<h2>EDITAR REGISTROS</h2>
+<h2>CREAR REGISTROS</h2>
 
-<form action="/gameas/{{$gamea->id}}" method="POST">
+<form action="/gamea" method="POST">
 
     @csrf    
-    @method('PUT')
+    
   
   <div class="mb-3">
     <label for="" class="form-label">Descripción</label>
-    <input id="nombre" name="nombre" type="text" class="form-control" value="{{$gamea->nombre}}">
+    <input id="nombre" name="nombre" type="text" class="form-control">
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Cantidad</label>
-    <input id="sigla" name="sigla" type="text" class="form-control" value="{{$gamea->sigla}}">
+    <label for="" class="form-label">Sigla</label>
+    <input id="sigla" name="sigla" type="text" class="form-control" >
   </div>
   
 

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ActorGamea;
 
-class GameaController extends Controller
+class RegistraractaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class GameaController extends Controller
      */
     public function index()
     {
-        $gameas=ActorGamea::all();
-        return view('gamea.index')->with('gameas',$gameas);
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class GameaController extends Controller
      */
     public function create()
     {
-        return view('gamea.create');
+        //
     }
 
     /**
@@ -36,14 +34,7 @@ class GameaController extends Controller
      */
     public function store(Request $request)
     {
-        $gameas = new ActorGamea();
-
-        $gameas->nombre=$request->get('nombre');
-        $gameas->sigla=$request->get('sigla');
-
-        $gameas->save();
-
-        return redirect ('/gamea');
+        //
     }
 
     /**
@@ -65,8 +56,7 @@ class GameaController extends Controller
      */
     public function edit($id)
     {
-        $gameas=gamea::find($id);
-        return view('gamea.edit')->with('gamea',$gameas);
+        //
     }
 
     /**

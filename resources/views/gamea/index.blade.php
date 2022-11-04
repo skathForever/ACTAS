@@ -2,7 +2,7 @@
 
 @section('contenido');
 
-<a href="articulos/create"class="btn btn-primary">Crear</a>
+<a href="gamea/create"class="btn btn-primary">Crear</a>
 
 
 <table class="table table-dark table-striped mt-4">
@@ -21,7 +21,7 @@
             <td>{{$gamea->sigla}}</td>
             <td>
                 <a href="*/gamea/{{}}"class="btn btn-info">Editar</a></a>
-                <a class="btn btn-inf">Borrar</a>
+                <a class="btn btn-info">Borrar</a>
                 <button></button>
             </td>
         </tr>

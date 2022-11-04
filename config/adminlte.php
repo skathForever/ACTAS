@@ -319,7 +319,7 @@ return [
         ],
         [
             'text'        => 'Registrar Acta',
-            'url'         => 'admin/pages',
+            'url'         => 'actas',
             'icon'        => 'fas fa-file-archive',
             'label'       => 4,
             'label_color' => 'success',
@@ -342,7 +342,7 @@ return [
             'submenu' => [
                 [
                     'text'        => 'Gamea',
-                    'url'         => 'admin/pages',
+                    'url'         => 'gamea',
                     'icon'        => 'fas fa-user-friends',
                     'label'       => 1,
                     'label_color' => 'success',
