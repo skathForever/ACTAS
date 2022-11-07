@@ -9,8 +9,8 @@ class RegActa extends Model
 {
     use HasFactory;
     
-    public function tipoacta()
-    {
-        return $this->hasMani(tipoacta::class, 'id_tipo');
+    public function tipoactas()
+    {       
+        return $this->belongsTo(tipoacta::class, 'id_tipo');
     }
 }

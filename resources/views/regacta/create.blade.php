@@ -11,10 +11,29 @@
     @csrf    
     
   
-  <div class="mb-3">
+
+
+<!--  
+<div class="mb-3">
     <label for="" class="form-label">Tipo Acta</label>
     <input id="id_tipo" name="id_tipo" type="text" class="form-control">
   </div>
+ -->
+
+
+  <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tipo Acta</label>
+            <select  id="id_tipo" name="id_tipo" type="text" class="form-control" tabindex="1">
+            <option  value="">-Selecciona-</option>
+            @foreach($tipoactas as $tipoacta)
+            <option  value="{{$tipoacta->id}}">{{$tipoacta->tipo_acta}}</option>
+            @endforeach
+            </select>
+  </div>
+
+
+
+
 
   <div class="mb-3">
     <label for="" class="form-label">Tema</label>

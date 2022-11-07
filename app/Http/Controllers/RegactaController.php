@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\RegActa;
+use App\Models\TipoActa;
 
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class RegactaController extends Controller
      */
     public function index()
     {
+ 
         $regactas=RegActa::all();
         return view('regacta.index')->with('regactas',$regactas);
     }
@@ -24,8 +26,8 @@ class RegactaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('regacta.create');
+    {   $tipoactas = TipoActa::all();
+        return view('regacta.create')->with('tipoactas',$tipoactas);
     }
 
     /**
@@ -38,7 +40,7 @@ class RegactaController extends Controller
     {
         $regactas = new RegActa();
 
-        $regactas->id_tipo=$request->get('tipo_acta');
+        $regactas->id_tipo=$request->get('id_tipo');
         $regactas->tema=$request->get('tema');
         $regactas->hora=$request->get('hora');
         $regactas->fecha=$request->get('fecha');
@@ -70,7 +72,7 @@ class RegactaController extends Controller
      */
     public function edit($id)
     {
-        $regacta = regacta::find($id);
+        $regacta = RegActa::find($id);
         return view('regacta.edit')->with('regacta',$regacta);
     }
 
@@ -83,14 +85,14 @@ class RegactaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $regacta=regacta::find($id);
+        $regacta=RegActa::find($id);
 
-        $regactas->id_tipo=$request->get('tipo_acta');
-        $regactas->tema=$request->get('tema');
-        $regactas->hora=$request->get('hora');
-        $regactas->fecha=$request->get('fecha');
-        $regactas->relevancia=$request->get('relevancia');
-        $regactas->scan=$request->get('scan');
+        $regacta->id_tipo = $request->get('id_tipo');
+        $regacta->tema = $request->get('tema');
+        $regacta->hora=$request->get('hora');
+        $regacta->fecha=$request->get('fecha');
+        $regacta->relevancia=$request->get('relevancia');
+        $regacta->scan=$request->get('scan');
         
 
         $regacta->save();

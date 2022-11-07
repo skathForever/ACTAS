@@ -28,11 +28,11 @@
     @foreach ($regactas as $regacta)
         <tr>
             <td>{{$regacta->id}}</td>
-            <td>{{$regacta->id_tipo}}</td>
+            <td>{{$regacta->tipoactas->tipo_acta}}</td>
             <td>{{$regacta->tema}}</td>
             <td>{{$regacta->hora}}</td>
             <td>{{$regacta->fecha}}</td>
-            <td>{{$regacta->relevencia}}</td>
+            <td>{{$regacta->relevancia}}</td>
             <td>{{$regacta->scan}}</td>
             
             <td>
