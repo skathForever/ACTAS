@@ -2,11 +2,14 @@
 
 @section('contenido')
 
-<p></p>
 
-<h1 class="bg-primary text-white text-center">CREAR ACTOR GAMEA</h1>
+<P></P>
 
-<form action="/gameas" method="POST">
+<h1 class="bg-primary text-white text-center">CREAR ACTOR ORGANIZACION SOCIAL</h1>
+
+<P></P>
+
+<form action="/organizacions" method="POST">
 
     @csrf    
     
@@ -22,7 +25,7 @@
   </div>
   
 
-  <a href="/gameas" class="btn btn-secondary">Cancelar</a>
+  <a href="/organizacions" class="btn btn-secondary">Cancelar</a>
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

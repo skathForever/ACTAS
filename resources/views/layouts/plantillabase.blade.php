@@ -3,7 +3,8 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+
+    <center><h1>Bienvenidos</h1></center>
 @stop
 
 @section('content')
@@ -21,7 +22,7 @@
     <title>CRUD</title>
   </head>
   <body>
-    <h1 class="bg-primary text-white text-center">Actor Gamea</h1>
+    
 
     <div class="container">
         @yield('contenido')

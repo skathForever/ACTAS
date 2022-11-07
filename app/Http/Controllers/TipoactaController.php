@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TipoActa;
 
-class RegistraractaController extends Controller
+class TipoActaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class RegistraractaController extends Controller
      */
     public function index()
     {
-        //
+        $tipoactas=TipoActa::all();
+        return view('tipoacta.index')->with('tipoactas',$tipoactas);
     }
 
     /**
@@ -23,7 +25,7 @@ class RegistraractaController extends Controller
      */
     public function create()
     {
-        //
+        return view('tipoacta.create');
     }
 
     /**
@@ -34,7 +36,14 @@ class RegistraractaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tipoactas = new TipoActa();
+
+        $tipoactas->tipo_acta=$request->get('tipo_acta');
+        
+
+        $tipoactas->save();
+
+        return redirect ('tipoactas');
     }
 
     /**
@@ -56,7 +65,8 @@ class RegistraractaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tipoacta = TipoActa::find($id);
+        return view('tipoacta.edit')->with('tipoacta',$tipoacta);
     }
 
     /**
@@ -68,7 +78,14 @@ class RegistraractaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tipoacta=TipoActa::find($id);
+
+        $tipoacta->tipo_acta=$request->get('tipo_acta');
+        
+
+        $tipoacta->save();
+
+        return redirect ('tipoactas');
     }
 
     /**
@@ -79,6 +96,10 @@ class RegistraractaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tipoacta=TipoActa::find($id);
+
+        $tipoacta->delete();
+
+        return redirect ('tipoactas');
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\RegActa;
 
 use Illuminate\Http\Request;
-use App\Models\ActorGamea;
 
-class GameaController extends Controller
+class RegactaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class GameaController extends Controller
      */
     public function index()
     {
-        $gameas=ActorGamea::all();
-        return view('gamea.index')->with('gameas',$gameas);
+        $regactas=RegActa::all();
+        return view('regacta.index')->with('regactas',$regactas);
     }
 
     /**
@@ -25,7 +25,7 @@ class GameaController extends Controller
      */
     public function create()
     {
-        return view('gamea.create');
+        return view('regacta.create');
     }
 
     /**
@@ -36,14 +36,19 @@ class GameaController extends Controller
      */
     public function store(Request $request)
     {
-        $gameas = new ActorGamea();
+        $regactas = new RegActa();
 
-        $gameas->nombre=$request->get('nombre');
-        $gameas->sigla=$request->get('sigla');
+        $regactas->id_tipo=$request->get('tipo_acta');
+        $regactas->tema=$request->get('tema');
+        $regactas->hora=$request->get('hora');
+        $regactas->fecha=$request->get('fecha');
+        $regactas->relevancia=$request->get('relevancia');
+        $regactas->scan=$request->get('scan');
+        
 
-        $gameas->save();
+        $regactas->save();
 
-        return redirect ('gameas');
+        return redirect ('regactas');
     }
 
     /**
@@ -65,8 +70,8 @@ class GameaController extends Controller
      */
     public function edit($id)
     {
-        $gamea = ActorGamea::find($id);
-        return view('gamea.edit')->with('gamea',$gamea);
+        $regacta = regacta::find($id);
+        return view('regacta.edit')->with('regacta',$regacta);
     }
 
     /**
@@ -78,14 +83,19 @@ class GameaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $gamea=ActorGamea::find($id);
+        $regacta=regacta::find($id);
 
-        $gamea->nombre=$request->get('nombre');
-        $gamea->sigla=$request->get('sigla');
+        $regactas->id_tipo=$request->get('tipo_acta');
+        $regactas->tema=$request->get('tema');
+        $regactas->hora=$request->get('hora');
+        $regactas->fecha=$request->get('fecha');
+        $regactas->relevancia=$request->get('relevancia');
+        $regactas->scan=$request->get('scan');
+        
 
-        $gamea->save();
+        $regacta->save();
 
-        return redirect ('gameas');
+        return redirect ('regactas');
     }
 
     /**
@@ -96,10 +106,10 @@ class GameaController extends Controller
      */
     public function destroy($id)
     {
-        $gamea=ActorGamea::find($id);
+        $regacta=regacta::find($id);
 
-        $gamea->delete();
+        $regacta->delete();
 
-        return redirect ('gameas');
+        return redirect ('regactas');
     }
 }

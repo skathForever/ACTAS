@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ActorGamea;
+use App\Models\ActorOrganizacion;
 
-class GameaController extends Controller
+class OrganizacionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,10 @@ class GameaController extends Controller
      */
     public function index()
     {
-        $gameas=ActorGamea::all();
-        return view('gamea.index')->with('gameas',$gameas);
+        $organizacions=ActorOrganizacion::all();
+        return view('organizacion.index')->with('organizacions',$organizacions);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +26,7 @@ class GameaController extends Controller
      */
     public function create()
     {
-        return view('gamea.create');
+        return view('organizacion.create');
     }
 
     /**
@@ -36,14 +37,14 @@ class GameaController extends Controller
      */
     public function store(Request $request)
     {
-        $gameas = new ActorGamea();
+        $organizacions = new ActorOrganizacion();
 
-        $gameas->nombre=$request->get('nombre');
-        $gameas->sigla=$request->get('sigla');
+        $organizacions->nombre=$request->get('nombre');
+        $organizacions->sigla=$request->get('sigla');
 
-        $gameas->save();
+        $organizacions->save();
 
-        return redirect ('gameas');
+        return redirect ('organizacions');
     }
 
     /**
@@ -65,8 +66,8 @@ class GameaController extends Controller
      */
     public function edit($id)
     {
-        $gamea = ActorGamea::find($id);
-        return view('gamea.edit')->with('gamea',$gamea);
+        $organizacion = ActorOrganizacion::find($id);
+        return view('organizacion.edit')->with('organizacion',$organizacion);
     }
 
     /**
@@ -78,14 +79,14 @@ class GameaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $gamea=ActorGamea::find($id);
+        $organizacion=ActorOrganizacion::find($id);
 
-        $gamea->nombre=$request->get('nombre');
-        $gamea->sigla=$request->get('sigla');
+        $organizacion->nombre=$request->get('nombre');
+        $organizacion->sigla=$request->get('sigla');
 
-        $gamea->save();
+        $organizacion->save();
 
-        return redirect ('gameas');
+        return redirect ('organizacions');
     }
 
     /**
@@ -96,10 +97,10 @@ class GameaController extends Controller
      */
     public function destroy($id)
     {
-        $gamea=ActorGamea::find($id);
+        $organizacion=ActorOrganizacion::find($id);
 
-        $gamea->delete();
+        $organizacion->delete();
 
-        return redirect ('gameas');
+        return redirect ('organizacions');
     }
 }

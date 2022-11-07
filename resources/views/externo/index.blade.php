@@ -4,11 +4,11 @@
 
 <p></p>
 
-<h1 class="bg-primary text-white text-center">ACTOR GAMEA</h1>
+<h1 class="bg-primary text-white text-center">ACTOR EXTERNO</h1>
 
 <p></p>
 
-<center><a href="gameas/create"class="btn btn-primary">Crear</a></center>
+<center><a href="externos/create"class="btn btn-primary">Crear</a></center>
 
 
 <table class="table table-dark table-striped mt-4">
@@ -20,16 +20,16 @@
     </tr>
   </thead>
   <tbody>
-    @foreach ($gameas as $gamea)
+    @foreach ($externos as $externo)
         <tr>
-            <td>{{$gamea->id}}</td>
-            <td>{{$gamea->nombre}}</td>
-            <td>{{$gamea->sigla}}</td>
+            <td>{{$externo->id}}</td>
+            <td>{{$externo->nombre}}</td>
+            <td>{{$externo->sigla}}</td>
             <td>
-            <form action="{{ route('gameas.destroy',$gamea->id) }}" method="POST">
+            <form action="{{ route('externos.destroy',$externo->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <a href="/gameas/{{$gamea->id}}/edit"class="btn btn-info">Editar</a></a>
+                <a href="/externos/{{$externo->id}}/edit"class="btn btn-info">Editar</a></a>
                 <button type="submit" class="btn btn-danger">Borrar</button>
             </td>
         </tr>

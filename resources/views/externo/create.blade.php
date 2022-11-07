@@ -4,9 +4,9 @@
 
 <p></p>
 
-<h1 class="bg-primary text-white text-center">CREAR ACTOR GAMEA</h1>
+<h1 class="bg-primary text-white text-center">CREAR ACTOR EXTERNO</h1>
 
-<form action="/gameas" method="POST">
+<form action="/externos" method="POST">
 
     @csrf    
     
@@ -22,7 +22,7 @@
   </div>
   
 
-  <a href="/gameas" class="btn btn-secondary">Cancelar</a>
+  <a href="/externos" class="btn btn-secondary">Cancelar</a>
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

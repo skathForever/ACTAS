@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ActorExterno;
 
-class ExternosController extends Controller
+class ExternoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class ExternosController extends Controller
      */
     public function index()
     {
-        //
+        $externos=ActorExterno::all();
+        return view('externo.index')->with('externos',$externos);
     }
 
     /**
@@ -23,7 +25,7 @@ class ExternosController extends Controller
      */
     public function create()
     {
-        //
+        return view('externo.create');
     }
 
     /**
@@ -34,7 +36,14 @@ class ExternosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $externos = new ActorExterno();
+
+        $externos->nombre=$request->get('nombre');
+        $externos->sigla=$request->get('sigla');
+
+        $externos->save();
+
+        return redirect ('externos');
     }
 
     /**
@@ -56,7 +65,8 @@ class ExternosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $externo = ActorExterno::find($id);
+        return view('externo.edit')->with('externo',$externo);
     }
 
     /**
@@ -68,7 +78,14 @@ class ExternosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $externo=ActorExterno::find($id);
+
+        $externo->nombre=$request->get('nombre');
+        $externo->sigla=$request->get('sigla');
+
+        $externo->save();
+
+        return redirect ('externos');
     }
 
     /**
@@ -79,6 +96,10 @@ class ExternosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $externo=ActorExterno::find($id);
+
+        $externo->delete();
+
+        return redirect ('externos');
     }
 }

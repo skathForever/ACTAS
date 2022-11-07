@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ActorGamea;
+use App\Models\ActorUrbanizacion;
 
-class GameaController extends Controller
+class UrbanizacionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,10 @@ class GameaController extends Controller
      */
     public function index()
     {
-        $gameas=ActorGamea::all();
-        return view('gamea.index')->with('gameas',$gameas);
+        $urbanizacions=ActorUrbanizacion::all();
+        return view('urbanizacion.index')->with('urbanizacions',$urbanizacions);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +26,7 @@ class GameaController extends Controller
      */
     public function create()
     {
-        return view('gamea.create');
+        return view('urbanizacion.create');
     }
 
     /**
@@ -36,14 +37,15 @@ class GameaController extends Controller
      */
     public function store(Request $request)
     {
-        $gameas = new ActorGamea();
+        $urbanizacions = new Actorurbanizacion();
 
-        $gameas->nombre=$request->get('nombre');
-        $gameas->sigla=$request->get('sigla');
+        $urbanizacions->nombre=$request->get('nombre');
+        $urbanizacions->sigla=$request->get('sigla');
+        $urbanizacions->distrito=$request->get('distrito');
 
-        $gameas->save();
+        $urbanizacions->save();
 
-        return redirect ('gameas');
+        return redirect ('urbanizacions');
     }
 
     /**
@@ -65,8 +67,8 @@ class GameaController extends Controller
      */
     public function edit($id)
     {
-        $gamea = ActorGamea::find($id);
-        return view('gamea.edit')->with('gamea',$gamea);
+        $urbanizacion = ActorUrbanizacion::find($id);
+        return view('urbanizacion.edit')->with('urbanizacion',$urbanizacion);
     }
 
     /**
@@ -78,15 +80,17 @@ class GameaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $gamea=ActorGamea::find($id);
+        $urbanizacion=ActorUrbanizacion::find($id);
 
-        $gamea->nombre=$request->get('nombre');
-        $gamea->sigla=$request->get('sigla');
+        $urbanizacion->nombre=$request->get('nombre');
+        $urbanizacion->sigla=$request->get('sigla');
+        $urbanizacion->distrito=$request->get('distrito');
 
-        $gamea->save();
+        $urbanizacion->save();
 
-        return redirect ('gameas');
+        return redirect ('urbanizacions');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -96,10 +100,10 @@ class GameaController extends Controller
      */
     public function destroy($id)
     {
-        $gamea=ActorGamea::find($id);
+        $urbanizacion=ActorUrbanizacion::find($id);
 
-        $gamea->delete();
+        $urbanizacion->delete();
 
-        return redirect ('gameas');
+        return redirect ('urbanizacions');
     }
 }
