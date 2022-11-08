@@ -12,6 +12,32 @@ use Illuminate\Http\Request;
 
 class ReunionController extends Controller
 {
+
+
+    function reunionByActa ($id){
+        $idActa = $id;
+        $reuniones = Reunion::where('id_acta',$id)->get();
+        return view('acta.index3')->with('reuniones',$reuniones)->with('idActa',$idActa);
+        
+    }
+
+    
+
+    function actorReunionByActa ($id){
+
+        $acta = Acta::find($id);
+
+        $actoresGamea= ActorGamea::all();
+        $actoresExterno = ActorExterno::all();
+        $actoresOrganizaicon = ActorOrganizacion::all();
+        $actoresUrbanizacion = ActorUrbanizacion::all();
+        $actas = Acta::all();
+        return view('reunion.create2')->with('actas',$actas)->with('actoresGamea',$actoresGamea)->with('actoresExterno',$actoresExterno)
+        ->with('actoresOrganizaicon',$actoresOrganizaicon)->with('actoresUrbanizacion',$actoresUrbanizacion)->with('acta',$acta);
+
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,6 +45,7 @@ class ReunionController extends Controller
      */
     public function index()
     {
+
         $reuniones = Reunion::all();
         return view('reunion.index')->with('reuniones',$reuniones);
     }

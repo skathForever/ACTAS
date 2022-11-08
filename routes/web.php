@@ -39,7 +39,13 @@ Route::resource('actas', 'App\Http\Controllers\ActaController');
 
 Route::resource('reunions', 'App\Http\Controllers\ReunionController');
 
+Route::resource('registroReuniones', 'App\Http\Controllers\RegistroreunionController');
 
+
+
+Route::get('/reunions2/{id}/reunionByActa','App\Http\Controllers\ReunionController@reunionByActa');
+
+Route::get('/reunions3/{id}/ActorReunionByActa','App\Http\Controllers\ReunionController@actorReunionByActa');
 
 //Auth::routes('');
 
