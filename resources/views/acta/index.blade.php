@@ -8,7 +8,7 @@
 
 <p></p>
 
-<center><a href="regactas/create"class="btn btn-primary">Crear</a></center>
+<center><a href="actas/create"class="btn btn-primary">Crear</a></center>
 
 
 <table class="table table-dark table-striped mt-4">
@@ -25,21 +25,21 @@
     </tr>
   </thead>
   <tbody>
-    @foreach ($regactas as $regacta)
+    @foreach ($actas as $acta)
         <tr>
-            <td>{{$regacta->id}}</td>
-            <td>{{$regacta->tipoactas->tipo_acta}}</td>
-            <td>{{$regacta->tema}}</td>
-            <td>{{$regacta->hora}}</td>
-            <td>{{$regacta->fecha}}</td>
-            <td>{{$regacta->relevancia}}</td>
-            <td>{{$regacta->scan}}</td>
+            <td>{{$acta->id}}</td>
+            <td>{{$acta->tipoactas->nombre}}</td>
+            <td>{{$acta->tema}}</td>
+            <td>{{$acta->hora}}</td>
+            <td>{{$acta->fecha}}</td>
+            <td>{{$acta->relevancia}}</td>
+            <td>{{$acta->scan}}</td>
             
             <td>
-            <form action="{{ route('regactas.destroy',$regacta->id) }}" method="POST">
+            <form action="{{ route('actas.destroy',$acta->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <a href="/regactas/{{$regacta->id}}/edit"class="btn btn-info">Editar</a></a>
+                <a href="/actas/{{$acta->id}}/edit"class="btn btn-info">Editar</a></a>
                 <button type="submit" class="btn btn-danger">Borrar</button>
             </td>
         </tr>

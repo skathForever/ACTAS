@@ -19,31 +19,31 @@ class CreateReunionsTable extends Migration
 
             $table->foreignId('id_gamea')
             ->nullable()
-            ->constrained('actor_gameas')
+            ->constrained('actorgameas')
             ->cascadeOnUpdate()
             ->nullOnDelete();
 
             $table->foreignId('id_externo')
             ->nullable()
-            ->constrained('actor_externos')
+            ->constrained('actorexternos')
             ->cascadeOnUpdate()
             ->nullOnDelete();
 
             $table->foreignId('id_organizacion')
             ->nullable()
-            ->constrained('actor_organizacions')
+            ->constrained('actororganizacions')
             ->cascadeOnUpdate()
             ->nullOnDelete();
 
             $table->foreignId('id_urbanizacion')
             ->nullable()
-            ->constrained('actor_urbanizacions')
+            ->constrained('actorurbanizacions')
             ->cascadeOnUpdate()
             ->nullOnDelete();
 
             $table->foreignId('id_acta')
             ->nullable()
-            ->constrained('reg_actas')
+            ->constrained('actas')
             ->cascadeOnUpdate()
             ->nullOnDelete();  
         });

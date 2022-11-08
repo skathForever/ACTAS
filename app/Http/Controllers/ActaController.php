@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\RegActa;
+use App\Models\Acta;
 use App\Models\TipoActa;
 
 use Illuminate\Http\Request;
 
-class RegactaController extends Controller
+class ActaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class RegactaController extends Controller
     public function index()
     {
  
-        $regactas=RegActa::all();
-        return view('regacta.index')->with('regactas',$regactas);
+        $actas=Acta::all();
+        return view('acta.index')->with('actas',$actas);
     }
 
     /**
@@ -27,7 +27,7 @@ class RegactaController extends Controller
      */
     public function create()
     {   $tipoactas = TipoActa::all();
-        return view('regacta.create')->with('tipoactas',$tipoactas);
+        return view('acta.create')->with('tipoactas',$tipoactas);
     }
 
     /**
@@ -38,19 +38,18 @@ class RegactaController extends Controller
      */
     public function store(Request $request)
     {
-        $regactas = new RegActa();
+        $actas = new Acta();
 
-        $regactas->id_tipo=$request->get('id_tipo');
-        $regactas->tema=$request->get('tema');
-        $regactas->hora=$request->get('hora');
-        $regactas->fecha=$request->get('fecha');
-        $regactas->relevancia=$request->get('relevancia');
-        $regactas->scan=$request->get('scan');
+        $actas->id_tipo=$request->get('id_tipo');
+        $actas->tema=$request->get('tema');
+        $actas->hora=$request->get('hora');
+        $actas->fecha=$request->get('fecha');
+        $actas->relevancia=$request->get('relevancia');
+        $actas->scan=$request->get('scan');
         
+        $actas->save();
 
-        $regactas->save();
-
-        return redirect ('regactas');
+        return redirect ('actas');
     }
 
     /**
@@ -72,8 +71,8 @@ class RegactaController extends Controller
      */
     public function edit($id)
     {
-        $regacta = RegActa::find($id);
-        return view('regacta.edit')->with('regacta',$regacta);
+        $acta = Acta::find($id);
+        return view('acta.edit')->with('acta',$acta);
     }
 
     /**
@@ -85,19 +84,16 @@ class RegactaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $regacta=RegActa::find($id);
+        $acta=Acta::find($id);
 
-        $regacta->id_tipo = $request->get('id_tipo');
-        $regacta->tema = $request->get('tema');
-        $regacta->hora=$request->get('hora');
-        $regacta->fecha=$request->get('fecha');
-        $regacta->relevancia=$request->get('relevancia');
-        $regacta->scan=$request->get('scan');
-        
-
-        $regacta->save();
-
-        return redirect ('regactas');
+        $acta->id_tipo = $request->get('id_tipo');
+        $acta->tema = $request->get('tema');
+        $acta->hora=$request->get('hora');
+        $acta->fecha=$request->get('fecha');
+        $acta->relevancia=$request->get('relevancia');
+        $acta->scan=$request->get('scan');
+        $acta->save();
+        return redirect ('actas');
     }
 
     /**
@@ -108,10 +104,10 @@ class RegactaController extends Controller
      */
     public function destroy($id)
     {
-        $regacta=regacta::find($id);
+        $acta=Acta::find($id);
 
-        $regacta->delete();
+        $acta->delete();
 
-        return redirect ('regactas');
+        return redirect ('actas');
     }
 }

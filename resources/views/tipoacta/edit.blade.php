@@ -12,7 +12,7 @@
 
   <div class="mb-3">
     <label for="" class="form-label">Tipo Acta</label>
-    <input id="tipo_acta" name="tipo_acta" type="text" class="form-control" tabindex="1" value="{{$tipoacta->tipo_acta}}">    
+    <input id="nombre" name="nombre" type="text" class="form-control" tabindex="1" value="{{$tipoacta->nombre}}">    
   </div>
 
 

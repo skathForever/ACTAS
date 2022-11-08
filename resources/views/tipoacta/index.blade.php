@@ -23,7 +23,7 @@
     @foreach ($tipoactas as $tipoacta)
         <tr>
             <td>{{$tipoacta->id}}</td>
-            <td>{{$tipoacta->tipo_acta}}</td>
+            <td>{{$tipoacta->nombre}}</td>
             
             <td>
             <form action="{{ route('tipoactas.destroy',$tipoacta->id) }}" method="POST">

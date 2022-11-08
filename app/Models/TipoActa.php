@@ -10,7 +10,7 @@ class TipoActa extends Model
     use HasFactory;
 
     public function RegActas(){
-        return $this->hasMany(RegActa::class,'id');
+        return $this->hasMany(Acta::class,'id');
     }
 
 

@@ -35,8 +35,9 @@ Route::resource('urbanizacions', 'App\Http\Controllers\UrbanizacionController');
 
 Route::resource('tipoactas', 'App\Http\Controllers\TipoActaController');
 
-Route::resource('regactas', 'App\Http\Controllers\RegactaController');
+Route::resource('actas', 'App\Http\Controllers\ActaController');
 
+Route::resource('reunions', 'App\Http\Controllers\ReunionController');
 
 
 

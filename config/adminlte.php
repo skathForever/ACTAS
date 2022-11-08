@@ -326,9 +326,16 @@ return [
         ],
         [
             'text'        => 'Registrar Acta',
-            'url'         => 'regactas',
+            'url'         => 'actas',
             'icon'        => 'fas fa-file-archive',
             'label'       => 2,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Registrar Reunion',
+            'url'         => 'reunions',
+            'icon'        => 'fas fa-file-archive',
+            'label'       => 3,
             'label_color' => 'success',
         ],
         ['header' => 'PERFIL DE USUARIO'],

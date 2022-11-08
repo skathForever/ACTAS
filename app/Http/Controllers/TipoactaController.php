@@ -38,7 +38,7 @@ class TipoActaController extends Controller
     {
         $tipoactas = new TipoActa();
 
-        $tipoactas->tipo_acta=$request->get('tipo_acta');
+        $tipoactas->nombre=$request->get('nombre');
         
 
         $tipoactas->save();

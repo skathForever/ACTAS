@@ -6,27 +6,16 @@
 
 <h1 class="bg-primary text-white text-center">CREAR  Tipo Acta</h1>
 
-<form action="/regactas" method="POST">
+<form action="/actas" method="POST">
 
     @csrf    
     
-  
-
-
-<!--  
-<div class="mb-3">
-    <label for="" class="form-label">Tipo Acta</label>
-    <input id="id_tipo" name="id_tipo" type="text" class="form-control">
-  </div>
- -->
-
-
   <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Tipo Acta</label>
             <select  id="id_tipo" name="id_tipo" type="text" class="form-control" tabindex="1">
             <option  value="">-Selecciona-</option>
             @foreach($tipoactas as $tipoacta)
-            <option  value="{{$tipoacta->id}}">{{$tipoacta->tipo_acta}}</option>
+            <option  value="{{$tipoacta->id}}">{{$tipoacta->nombre}}</option>
             @endforeach
             </select>
   </div>
@@ -61,7 +50,7 @@
   </div>
 
 
-  <center><a href="/regactas" class="btn btn-secondary">Cancelar</a>
+  <center><a href="/actas" class="btn btn-secondary">Cancelar</a>
 
 <button type="submit" class="btn btn-primary">Guardar</button></center>
 </form>

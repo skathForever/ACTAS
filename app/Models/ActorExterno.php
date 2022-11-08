@@ -5,7 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ActorExterno extends Model
+class Actorexterno extends Model
 {
     use HasFactory;
+
+    use HasFactory;
+    public function reunions(){
+        return $this->hasMany(Reunion::class,'id');
+    }
 }

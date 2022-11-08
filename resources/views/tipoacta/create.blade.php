@@ -13,7 +13,7 @@
   
   <div class="mb-3">
     <label for="" class="form-label">Descripción</label>
-    <input id="tipo_acta" name="tipo_acta" type="text" class="form-control">
+    <input id="nombre" name="nombre" type="text" class="form-control">
   </div>
 
   

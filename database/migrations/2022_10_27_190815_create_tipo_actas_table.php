@@ -15,14 +15,10 @@ class CreateTipoActasTable extends Migration
     {
         Schema::create('tipo_actas', function (Blueprint $table) {
             $table->id('id');
-            $table->string('tipo_acta');
+            $table->string('nombre');
             $table->timestamps();
 
-            $table->foreignId('id_tipo')
-            ->nullable()
-            ->constrained('reg_actas')
-            ->cascadeOnUpdate()
-            ->nullOnDelete(); 
+   
         });
     }
 
