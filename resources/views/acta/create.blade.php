@@ -6,7 +6,7 @@
 
 <h1 class="bg-primary text-white text-center">CREAR  Tipo Acta</h1>
 
-<form action="/actas" method="POST">
+<form action="/actas" method="POST" enctype="multipart/form-data">
 
     @csrf    
     

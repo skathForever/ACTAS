@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Acta;
 use App\Models\TipoActa;
-
+use DB;
 use Illuminate\Http\Request;
 
 class ActaController extends Controller
@@ -45,8 +45,12 @@ class ActaController extends Controller
         $actas->hora=$request->get('hora');
         $actas->fecha=$request->get('fecha');
         $actas->relevancia=$request->get('relevancia');
-        $actas->scan=$request->get('scan');
-        
+       
+            $archivo=$request->file('scan');
+            $archivo->move(public_path().'/Archivos/',$archivo->getClientOriginalName());
+            $actas->scan=$archivo->getClientOriginalName();
+    
+                
         $actas->save();
 
         return redirect ('actas');
