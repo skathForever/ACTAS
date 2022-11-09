@@ -30,6 +30,13 @@ class ActaController extends Controller
         return view('acta.create')->with('tipoactas',$tipoactas);
     }
 
+    public function crear2()
+    {   $tipoactas = TipoActa::all();
+        return view('acta.create2')->with('tipoactas',$tipoactas);
+    }
+
+    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -42,9 +49,11 @@ class ActaController extends Controller
 
         $actas->id_tipo=$request->get('id_tipo');
         $actas->tema=$request->get('tema');
+        $actas->lugar=$request->get('lugar');
         $actas->hora=$request->get('hora');
         $actas->fecha=$request->get('fecha');
         $actas->relevancia=$request->get('relevancia');
+        $actas->hr=$request->get('hr');
        
             $archivo=$request->file('scan');
             $archivo->move(public_path().'/Archivos/',$archivo->getClientOriginalName());
@@ -55,6 +64,29 @@ class ActaController extends Controller
 
         return redirect ('actas');
     }
+
+    public function otro2(Request $request)
+    {
+        $actas = new Acta();
+
+        $actas->id_tipo=$request->get('id_tipo');
+        $actas->tema=$request->get('tema');
+        $actas->lugar=$request->get('lugar');
+        $actas->hora=$request->get('hora');
+        $actas->fecha=$request->get('fecha');
+        $actas->relevancia=$request->get('relevancia');
+        $actas->hr=$request->get('hr');
+       
+            $archivo=$request->file('scan');
+            $archivo->move(public_path().'/Archivos/',$archivo->getClientOriginalName());
+            $actas->scan=$archivo->getClientOriginalName();
+    
+                
+        $actas->save();
+
+        return redirect ('registroReuniones');
+    }
+
 
     /**
      * Display the specified resource.
@@ -90,12 +122,18 @@ class ActaController extends Controller
     {
         $acta=Acta::find($id);
 
-        $acta->id_tipo = $request->get('id_tipo');
-        $acta->tema = $request->get('tema');
+        $acta->id_tipo=$request->get('id_tipo');
+        $acta->tema=$request->get('tema');
+        $acta->lugar=$request->get('lugar');
         $acta->hora=$request->get('hora');
         $acta->fecha=$request->get('fecha');
         $acta->relevancia=$request->get('relevancia');
-        $acta->scan=$request->get('scan');
+        $acta->hr=$request->get('hr');
+
+        $archivo=$request->file('scan');
+        $archivo->move(public_path().'/Archivos/',$archivo->getClientOriginalName());
+        $acta->scan=$archivo->getClientOriginalName();
+
         $acta->save();
         return redirect ('actas');
     }

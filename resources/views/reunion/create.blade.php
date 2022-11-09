@@ -9,7 +9,7 @@
 
 <P></P>
 
-<form action="/reunions" method="POST">
+<form action="/actores" method="POST">
 
     @csrf    
     
@@ -73,7 +73,7 @@
 
   
 
-  <a href="/reunions" class="btn btn-secondary">Cancelar</a>
+  <a href="/actores" class="btn btn-secondary">Cancelar</a>
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

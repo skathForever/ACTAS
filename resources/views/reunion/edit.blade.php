@@ -5,7 +5,7 @@
 <h2>Editar Registros</h2>
 
 
-<form action="/reunions/{{$reunion->id}}"method="Post">
+<form action="/actores/{{$reunion->id}}"method="Post">
 
 @csrf
 @method('PUT')
@@ -67,7 +67,7 @@
             </select>
   </div>
   
-  <a href="/reunions" class="btn btn-secondary" tabindex="5">Cancelar</a>
+  <a href="/actores" class="btn btn-secondary" tabindex="5">Cancelar</a>
 
   <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>
 </form>

@@ -8,7 +8,7 @@
 
 <P></P>
 
-<center><a href="reunions/create"class="btn btn-primary">Crear</a></center>
+<center><a href="actores/create"class="btn btn-primary">Crear</a></center>
 
 
 <table class="table table-dark table-striped mt-4">
@@ -54,10 +54,10 @@
             
 
             <td>
-            <form action="{{ route('reunions.destroy',$reunion->id) }}" method="POST">
+            <form action="{{ route('actores.destroy',$reunion->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <a href="/reunions/{{$reunion->id}}/edit"class="btn btn-info">Editar</a></a>
+                <a href="/actores/{{$reunion->id}}/edit"class="btn btn-info">Editar</a></a>
                 <button type="submit" class="btn btn-danger">Borrar</button>
             </td>
         </tr>

@@ -4,14 +4,15 @@
 
 <p></p>
 
-<h1 class="bg-primary text-white text-center">REUNIONES 2</h1>
+<h1 class="bg-primary text-white text-center">ACTORES 2</h1>
 
 <P></P>
 
-<center><a href="/reunions3/{{$idActa}}/ActorReunionByActa" class="btn btn-primary">Crear</a></center>
-<br>
-<center><a href="/registroReuniones" class="btn btn-danger">Volver</a></center>
+<div>
+  <a href="/reunions3/{{$idActa}}/ActorReunionByActa" class="btn btn-primary">Crear</a>
+  <a href="/registroReuniones" class="btn btn-danger">Volver</a>
 
+</div>
 
 <table class="table table-dark table-striped mt-4">
 <thead>
@@ -56,10 +57,10 @@
             
 
             <td>
-            <form action="{{ route('reunions.destroy',$reunion->id) }}" method="POST">
+            <form action="{{ route('actores.destroy',$reunion->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <a href="/reunions/{{$reunion->id}}/edit"class="btn btn-info">Editar</a></a>
+                <a href="/actores/{{$reunion->id}}/edit"class="btn btn-info">Editar</a></a>
                 <button type="submit" class="btn btn-danger">Borrar</button>
             </td>
         </tr>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActorurbanizacionsTable extends Migration
+class CreateProyectosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateActorurbanizacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('actorurbanizacions', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('proyectos', function (Blueprint $table) {
+            $table->id();
             $table->string('nombre');
-            $table->string('distrito');
+            $table->string('estado');
+            $table->string('descripcion');
+            $table->string('scan');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateActorurbanizacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actorurbanizacions');
+        Schema::dropIfExists('proyectos');
     }
 }

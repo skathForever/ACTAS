@@ -17,9 +17,11 @@
       <th scope="col">ID</th>
       <th scope="col">TIPO ACTA</th>
       <th scope="col">TEMA</th>
+      <th scope="col">LUGAR</th>
       <th scope="col">HORA</th>
       <th scope="col">FECHA</th>
       <th scope="col">RELEVANCIA</th>
+      <th scope="col">HOJA DE RUTA</th>
       <th scope="col">SCAN</th>
       <th scope="col">ver</th>
       <th scope="col">acciones</th>
@@ -32,9 +34,11 @@
             <td>{{$acta->id}}</td>
             <td>{{$acta->tipoactas->nombre}}</td>
             <td>{{$acta->tema}}</td>
+            <td>{{$acta->lugar}}</td>
             <td>{{$acta->hora}}</td>
             <td>{{$acta->fecha}}</td>
             <td>{{$acta->relevancia}}</td>
+            <td>{{$acta->hr}}</td>
             <td>{{$acta->scan}} </td>
             <td><a class="btn btn-success" href="Archivos/{{$acta->scan}}" target="blank_">documeto</a></td>
             <td>

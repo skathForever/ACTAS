@@ -8,7 +8,11 @@
 
 <p></p>
 
-<center><a href="actas/create"class="btn btn-primary">Crear</a></center>
+<div>
+<a href="/otros3"class="btn btn-danger">Crear Acta</a>
+<!-- <a href="actas/create"class="btn btn-primary">Crear</a> -->
+</div>
+
 
 
 <table class="table table-dark table-striped mt-4">
@@ -17,11 +21,13 @@
       <th scope="col">ID</th>
       <th scope="col">TIPO ACTA</th>
       <th scope="col">TEMA</th>
+      <th scope="col">LUGAR</th>
       <th scope="col">HORA</th>
       <th scope="col">FECHA</th>
       <th scope="col">RELEVANCIA</th>
+      <th scope="col">HOJA DE RUTA</th>
       <th scope="col">SCAN</th>
-      <th scope="col">reunion</th>
+      <th scope="col">actores</th>
       <th scope="col">ver</th>
       <th scope="col">acciones</th>
       
@@ -33,9 +39,11 @@
             <td>{{$acta->id}}</td>
             <td>{{$acta->tipoactas->nombre}}</td>
             <td>{{$acta->tema}}</td>
+            <td>{{$acta->lugar}}</td>
             <td>{{$acta->hora}}</td>
             <td>{{$acta->fecha}}</td>
             <td>{{$acta->relevancia}}</td>
+            <td>{{$acta->hr}}</td>
             <td>{{$acta->scan}} </td>
             <td>
               <a class="btn btn-primary mr-5"  href="/reunions2/{{$acta->id}}/reunionByActa" target="blank_">registrar</a>

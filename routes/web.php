@@ -21,7 +21,7 @@ use App\Http\Controllers\RegActaController;
 */
 
 Route::get('/', function () {
-    return view('/home');
+    return redirect ('registroReuniones');
 });
 
 
@@ -37,16 +37,23 @@ Route::resource('tipoactas', 'App\Http\Controllers\TipoActaController');
 
 Route::resource('actas', 'App\Http\Controllers\ActaController');
 
-Route::resource('reunions', 'App\Http\Controllers\ReunionController');
+Route::resource('actores', 'App\Http\Controllers\ActorController');
 
 Route::resource('registroReuniones', 'App\Http\Controllers\RegistroreunionController');
 
 
+Route::post('/otros','App\Http\Controllers\ActorController@otro');
 
-Route::get('/reunions2/{id}/reunionByActa','App\Http\Controllers\ReunionController@reunionByActa');
+Route::post('/otros2','App\Http\Controllers\ActaController@otro2');
 
-Route::get('/reunions3/{id}/ActorReunionByActa','App\Http\Controllers\ReunionController@actorReunionByActa');
+Route::get('/otros3','App\Http\Controllers\ActaController@crear2');
+
+
+
+Route::get('/reunions2/{id}/reunionByActa','App\Http\Controllers\ActorController@reunionByActa');
+
+Route::get('/reunions3/{id}/ActorReunionByActa','App\Http\Controllers\ActorController@actorReunionByActa');
 
 //Auth::routes('');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\RegistroreunionController::class, 'index'])->name('home');

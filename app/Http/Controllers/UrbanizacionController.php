@@ -40,7 +40,6 @@ class UrbanizacionController extends Controller
         $urbanizacions = new Actorurbanizacion();
 
         $urbanizacions->nombre=$request->get('nombre');
-        $urbanizacions->sigla=$request->get('sigla');
         $urbanizacions->distrito=$request->get('distrito');
 
         $urbanizacions->save();
@@ -83,7 +82,6 @@ class UrbanizacionController extends Controller
         $urbanizacion=ActorUrbanizacion::find($id);
 
         $urbanizacion->nombre=$request->get('nombre');
-        $urbanizacion->sigla=$request->get('sigla');
         $urbanizacion->distrito=$request->get('distrito');
 
         $urbanizacion->save();

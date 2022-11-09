@@ -333,9 +333,16 @@ return [
         ],
         [
             'text'        => 'Registrar Reunion',
-            'url'         => 'reunions',
+            'url'         => 'actores',
             'icon'        => 'fas fa-file-archive',
             'label'       => 3,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Registrar Actores',
+            'url'         => 'registroReuniones',
+            'icon'        => 'fas fa-file-archive',
+            'label'       => 4,
             'label_color' => 'success',
         ],
         ['header' => 'PERFIL DE USUARIO'],

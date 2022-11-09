@@ -10,6 +10,6 @@ class Actororganizacion extends Model
   
     use HasFactory;
     public function reunions(){
-        return $this->hasMany(Reunion::class,'id');
+        return $this->hasMany(Actor::class,'id');
     }
 }

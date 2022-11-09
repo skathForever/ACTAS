@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Actorgamea extends Model
+class Proyecto extends Model
 {
     use HasFactory;
-
-    public function reunions(){
-        return $this->hasMany(Actor::class,'id');
-    }
 }

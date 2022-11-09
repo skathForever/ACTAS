@@ -7,16 +7,14 @@ use App\Models\ActorExterno;
 use App\Models\ActorGamea;
 use App\Models\ActorOrganizacion;
 use App\Models\ActorUrbanizacion;
-use App\Models\Reunion;
+use App\Models\Actor;
 use Illuminate\Http\Request;
-
-class ReunionController extends Controller
+class ActorController extends Controller
 {
-
-
+    
     function reunionByActa ($id){
         $idActa = $id;
-        $reuniones = Reunion::where('id_acta',$id)->get();
+        $reuniones = Actor::where('id_acta',$id)->get();
         return view('acta.index3')->with('reuniones',$reuniones)->with('idActa',$idActa);
         
     }
@@ -46,7 +44,7 @@ class ReunionController extends Controller
     public function index()
     {
 
-        $reuniones = Reunion::all();
+        $reuniones = Actor::all();
         return view('reunion.index')->with('reuniones',$reuniones);
     }
 
@@ -75,7 +73,7 @@ class ReunionController extends Controller
      */
     public function store(Request $request)
     {
-        $reunion = new Reunion();
+        $reunion = new Actor();
 
         $reunion->id_gamea=$request->get('id_gamea');
         $reunion->id_externo=$request->get('id_externo');
@@ -84,7 +82,22 @@ class ReunionController extends Controller
         $reunion->id_acta=$request->get('id_acta');
         $reunion->save();
 
-        return redirect ('reunions');
+        return redirect ('actores');
+    }
+
+    public function otro(Request $request)
+    {
+        $reunion = new Actor();
+
+        $reunion->id_gamea=$request->get('id_gamea');
+        $reunion->id_externo=$request->get('id_externo');
+        $reunion->id_organizacion=$request->get('id_organizacion');
+        $reunion->id_urbanizacion=$request->get('id_urbanizacion');
+        $reunion->id_acta=$request->get('id_acta');
+        $reunion->save();
+
+        $link = "/reunions2/{$reunion->id_acta}/reunionByActa";
+        return redirect($link);
     }
 
     /**
@@ -111,7 +124,7 @@ class ReunionController extends Controller
         $actoresOrganizaicon = ActorOrganizacion::all();
         $actoresUrbanizacion = ActorUrbanizacion::all();
 
-        $reunion = Reunion::find($id);
+        $reunion = Actor::find($id);
         $actas = Acta::all();
 
         return view('reunion.edit')->with('reunion',$reunion)->with('actas',$actas)
@@ -128,7 +141,7 @@ class ReunionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $reunion=Reunion::find($id);
+        $reunion=Actor::find($id);
         $reunion->id_gamea=$request->get('id_gamea');
         $reunion->id_externo=$request->get('id_externo');
         $reunion->id_organizacion=$request->get('id_organizacion');
@@ -136,7 +149,7 @@ class ReunionController extends Controller
         $reunion->id_acta=$request->get('id_acta');
         $reunion->save();
 
-        return redirect ('reunions');
+        return redirect ('actores');
 
     }
 
@@ -148,10 +161,10 @@ class ReunionController extends Controller
      */
     public function destroy($id)
     {
-        $reunion=Reunion::find($id);
+        $reunion=Actor::find($id);
 
         $reunion->delete();
 
-        return redirect ('reunions');
+        return redirect ('actores');
     }
 }

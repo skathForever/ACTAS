@@ -9,10 +9,9 @@
 
 <P></P>
 
-<form action="/reunions" method="POST">
+<form action="/otros" method="POST">
 
     @csrf    
-    
 
   <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Actor Gamea</label>
@@ -71,7 +70,7 @@
 
   
 
-  <a href="/reunions" class="btn btn-secondary">Cancelar</a>
+  <a href="/actores" class="btn btn-secondary">Cancelar</a>
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

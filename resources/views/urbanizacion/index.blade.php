@@ -16,7 +16,6 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Sigla</th>
       <th scope="col">Distrito</th>
     </tr>
   </thead>
@@ -25,7 +24,6 @@
         <tr>
             <td>{{$urbanizacion->id}}</td>
             <td>{{$urbanizacion->nombre}}</td>
-            <td>{{$urbanizacion->sigla}}</td>
             <td>{{$urbanizacion->distrito}}</td>
             <td>
             <form action="{{ route('urbanizacions.destroy',$urbanizacion->id) }}" method="POST">

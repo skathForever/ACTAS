@@ -16,11 +16,6 @@
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Sigla</label>
-    <input id="sigla" name="sigla" type="text" class="form-control" tabindex="1" value="{{$urbanizacion->sigla}}">    
-  </div>
-
-  <div class="mb-3">
     <label for="" class="form-label">Distrito</label>
     <input id="distrito" name="distrito" type="text" class="form-control" tabindex="1" value="{{$urbanizacion->distrito}}">    
   </div>

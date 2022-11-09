@@ -4,9 +4,9 @@
 
 <p></p>
 
-<h1 class="bg-primary text-white text-center">CREAR  Tipo Acta</h1>
+<h1 class="bg-primary text-white text-center">CREAR  Tipo Acta 2</h1>
 
-<form action="/actas" method="POST" enctype="multipart/form-data">
+<form action="/otros2" method="POST" enctype="multipart/form-data">
 
     @csrf    
     
@@ -61,7 +61,7 @@
   </div>
 
 
-  <center><a href="/actas" class="btn btn-secondary">Cancelar</a>
+  <center><a href="/registroReuniones" class="btn btn-secondary">Cancelar</a>
 
 <button type="submit" class="btn btn-primary">Guardar</button></center>
 </form>
