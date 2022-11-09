@@ -51,6 +51,20 @@
 
   <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Actor Urbanizacion</label>
+        <label for="exampleInputEmail1" class="form-label">Seleccionar Distrito</label>
+
+            <select  id="id_urbanizacion" name="id_urbanizacion" type="text" class="form-control" tabindex="1">
+            <option  value="">-Selecciona-</option>
+            @foreach($distritos as $distrito)
+            <option  value="{{$distrito->id}}">{{$distrito->nombre}}</option>
+            @endforeach
+            </select>
+  </div>
+  
+  
+
+  <div class="mb-3">
+       
             <select  id="id_urbanizacion" name="id_urbanizacion" type="text" class="form-control" tabindex="1">
             <option  value="">-Selecciona-</option>
             @foreach($actoresUrbanizacion as $actorUrbanizacion)
@@ -58,6 +72,7 @@
             @endforeach
             </select>
   </div>
+
 
 
   <div class="mb-3">

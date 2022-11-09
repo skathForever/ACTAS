@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 
 
+Route::resource('distritos', 'App\Http\Controllers\DistritoController');
 
 Route::resource('gameas', 'App\Http\Controllers\GameaController');
 

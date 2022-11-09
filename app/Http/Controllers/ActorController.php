@@ -8,6 +8,7 @@ use App\Models\ActorGamea;
 use App\Models\ActorOrganizacion;
 use App\Models\ActorUrbanizacion;
 use App\Models\Actor;
+use App\Models\Distrito;
 use Illuminate\Http\Request;
 class ActorController extends Controller
 {
@@ -25,13 +26,15 @@ class ActorController extends Controller
 
         $acta = Acta::find($id);
 
+        $distritos = Distrito::all();
+
         $actoresGamea= ActorGamea::all();
         $actoresExterno = ActorExterno::all();
         $actoresOrganizaicon = ActorOrganizacion::all();
         $actoresUrbanizacion = ActorUrbanizacion::all();
         $actas = Acta::all();
         return view('reunion.create2')->with('actas',$actas)->with('actoresGamea',$actoresGamea)->with('actoresExterno',$actoresExterno)
-        ->with('actoresOrganizaicon',$actoresOrganizaicon)->with('actoresUrbanizacion',$actoresUrbanizacion)->with('acta',$acta);
+        ->with('actoresOrganizaicon',$actoresOrganizaicon)->with('actoresUrbanizacion',$actoresUrbanizacion)->with('acta',$acta)->with('distritos',$distritos);
 
 
     }

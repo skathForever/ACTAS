@@ -11,4 +11,9 @@ class Actorurbanizacion extends Model
     public function reunions(){
         return $this->hasMany(Actor::class,'id');
     }
+
+    public function distritos(){
+        return $this->belongsTo(Distrito::class,'id_distrito');
+    }
+    
 }

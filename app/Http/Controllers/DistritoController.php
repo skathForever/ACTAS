@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\ActorUrbanizacion;
 use App\Models\Distrito;
+use Illuminate\Http\Request;
 
-class UrbanizacionController extends Controller
+class DistritoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,9 @@ class UrbanizacionController extends Controller
      */
     public function index()
     {
-        $urbanizacions=ActorUrbanizacion::all();
-        return view('urbanizacion.index')->with('urbanizacions',$urbanizacions);
+        $distritos = Distrito::all();
+        return view('distrito.index')->with('distritos',$distritos);
     }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -27,8 +25,7 @@ class UrbanizacionController extends Controller
      */
     public function create()
     {
-        $distritos = Distrito::all();
-        return view('urbanizacion.create')->with('distritos',$distritos);
+        return view('distrito.create');
     }
 
     /**
@@ -39,14 +36,14 @@ class UrbanizacionController extends Controller
      */
     public function store(Request $request)
     {
-        $urbanizacions = new Actorurbanizacion();
+        $distrito = new Distrito();
 
-        $urbanizacions->nombre=$request->get('nombre');
-        $urbanizacions->id_distrito=$request->get('id_distrito');
+        $distrito->nombre=$request->get('nombre');
+        $distrito->abreviacion=$request->get('abreviacion');
 
-        $urbanizacions->save();
+        $distrito->save();
 
-        return redirect ('urbanizacions');
+        return redirect ('distritos');
     }
 
     /**
@@ -68,9 +65,8 @@ class UrbanizacionController extends Controller
      */
     public function edit($id)
     {
-        $distritos = Distrito::all();
-        $urbanizacion = ActorUrbanizacion::find($id);
-        return view('urbanizacion.edit')->with('urbanizacion',$urbanizacion)->with('distritos',$distritos);;
+        $distrito = Distrito::find($id);
+        return view('distrito.edit')->with('distrito',$distrito);
     }
 
     /**
@@ -82,16 +78,15 @@ class UrbanizacionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $urbanizacion=ActorUrbanizacion::find($id);
+        $distrito=Distrito::find($id);
 
-        $urbanizacion->nombre=$request->get('nombre');
-        $urbanizacion->id_distrito=$request->get('id_distrito');
+        $distrito->nombre=$request->get('nombre');
+        $distrito->abreviacion=$request->get('abreviacion');
 
-        $urbanizacion->save();
+        $distrito->save();
 
-        return redirect ('urbanizacions');
+        return redirect ('distritos');
     }
-    
 
     /**
      * Remove the specified resource from storage.
@@ -101,10 +96,10 @@ class UrbanizacionController extends Controller
      */
     public function destroy($id)
     {
-        $urbanizacion=ActorUrbanizacion::find($id);
+        $gamea=Distrito::find($id);
 
-        $urbanizacion->delete();
+        $gamea->delete();
 
-        return redirect ('urbanizacions');
+        return redirect ('distritos');
     }
 }

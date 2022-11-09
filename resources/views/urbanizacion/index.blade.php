@@ -24,7 +24,7 @@
         <tr>
             <td>{{$urbanizacion->id}}</td>
             <td>{{$urbanizacion->nombre}}</td>
-            <td>{{$urbanizacion->distrito}}</td>
+            <td>{{$urbanizacion->distritos->nombre}}</td>
             <td>
             <form action="{{ route('urbanizacions.destroy',$urbanizacion->id) }}" method="POST">
                 @csrf
