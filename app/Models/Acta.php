@@ -14,7 +14,8 @@ class Acta extends Model
         return $this->belongsTo(tipoacta::class, 'id_tipo');
     }
 
-    public function reunions(){
-        return $this->hasMany(Reunion::class,'id');
+    public function proyectos()
+    {       
+        return $this->belongsTo(Proyecto::class, 'id_proyecto');
     }
 }

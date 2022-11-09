@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Proyecto extends Model
 {
     use HasFactory;
+
+    public function actas(){
+        return $this->hasMany(Acta::class,'id');
+    }
+
 }

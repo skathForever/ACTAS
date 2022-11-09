@@ -25,6 +25,8 @@ Route::get('/', function () {
 });
 
 
+Route::resource('proyectos', 'App\Http\Controllers\ProyectoController');
+
 Route::resource('gameas', 'App\Http\Controllers\GameaController');
 
 Route::resource('externos', 'App\Http\Controllers\ExternoController');
