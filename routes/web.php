@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 
-Route::resource('proyectos', 'App\Http\Controllers\ProyectoController');
+
 
 Route::resource('gameas', 'App\Http\Controllers\GameaController');
 
@@ -43,10 +43,16 @@ Route::resource('actores', 'App\Http\Controllers\ActorController');
 
 Route::resource('registroReuniones', 'App\Http\Controllers\RegistroreunionController');
 
+Route::resource('proyectos', 'App\Http\Controllers\ProyectoController');
+
+
+
 
 Route::post('/otros','App\Http\Controllers\ActorController@otro');
 
 Route::post('/otros2','App\Http\Controllers\ActaController@otro2');
+
+
 
 Route::get('/otros3','App\Http\Controllers\ActaController@crear2');
 
@@ -55,6 +61,8 @@ Route::get('/otros3','App\Http\Controllers\ActaController@crear2');
 Route::get('/reunions2/{id}/reunionByActa','App\Http\Controllers\ActorController@reunionByActa');
 
 Route::get('/reunions3/{id}/ActorReunionByActa','App\Http\Controllers\ActorController@actorReunionByActa');
+
+
 
 //Auth::routes('');
 

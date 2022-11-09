@@ -18,6 +18,7 @@ class ProyectoController extends Controller
         return view('proyecto.index')->with('proyectos',$proyectos);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *

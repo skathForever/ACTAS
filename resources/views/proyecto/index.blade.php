@@ -19,6 +19,7 @@
       <th scope="col">Estado</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Scan</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>

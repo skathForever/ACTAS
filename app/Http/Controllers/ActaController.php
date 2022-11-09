@@ -20,6 +20,14 @@ class ActaController extends Controller
         return view('acta.index')->with('actas',$actas);
     }
 
+    public function index2()
+    {
+ 
+        $actas=Acta::all();
+        return view('acta.index4')->with('actas',$actas);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

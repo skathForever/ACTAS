@@ -23,6 +23,7 @@
       <th scope="col">RELEVANCIA</th>
       <th scope="col">HOJA DE RUTA</th>
       <th scope="col">SCAN</th>
+      <th scope="col">PROYECTO</th>
       <th scope="col">ver</th>
       <th scope="col">acciones</th>
       
@@ -40,6 +41,7 @@
             <td>{{$acta->relevancia}}</td>
             <td>{{$acta->hr}}</td>
             <td>{{$acta->scan}} </td>
+            <td>{{$acta->id_proyecto}} </td>
             <td><a class="btn btn-success" href="Archivos/{{$acta->scan}}" target="blank_">documeto</a></td>
             <td>
             <form action="{{ route('actas.destroy',$acta->id) }}" method="POST">
