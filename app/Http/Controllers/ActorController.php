@@ -165,9 +165,7 @@ class ActorController extends Controller
     public function destroy($id)
     {
         $reunion=Actor::find($id);
-
         $reunion->delete();
-
         return redirect ('actores');
     }
 }

@@ -31,6 +31,7 @@
                 @method('DELETE')
                 <a href="/gameas/{{$gamea->id}}/edit"class="btn btn-info">Editar</a></a>
                 <button type="submit" class="btn btn-danger">Borrar</button>
+            </form>
             </td>
         </tr>
     @endforeach

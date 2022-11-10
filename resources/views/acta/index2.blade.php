@@ -48,13 +48,22 @@
             <td>{{$acta->relevancia}}</td>
             <td>{{$acta->hr}}</td>
             <td>{{$acta->scan}} </td>
-            <td>{{$acta->proyecto}} </td>
+
+
+            <td>
+              @if($acta->id_proyecto)
+              {{$acta->proyectos->nombre}}
+              @endif
+          </td>
+
+  
+
             <td><a class="btn btn-success" href="Archivos/{{$acta->scan}}" target="blank_">ver</a></td>
             <td>
               <a class="btn btn-primary mr-5"  href="/reunions2/{{$acta->id}}/reunionByActa" target="blank_">registrar</a>
             </td>
             <td>
-              <a class="btn btn-warning mr-5"  href="/reunions2/{{$acta->id}}/reunionByActa" target="blank_">asignar</a>
+              <a class="btn btn-warning mr-5"  href="/acta/{{$acta->id}}/asignarByActa" target="blank_">asignar</a>
             </td>
             <td>
             <form action="{{ route('actas.destroy',$acta->id) }}" method="POST">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Acta;
+use App\Models\Proyecto;
 use App\Models\TipoActa;
 use DB;
 use Illuminate\Http\Request;
@@ -13,6 +14,28 @@ class ActaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    
+
+    public function update2(Request $request, $id)
+    {
+        $acta=Acta::find($id);
+        $acta->id_proyecto=$request->get('id_proyecto');
+ 
+        $acta->save();
+        return redirect ('registroReuniones');
+    }
+
+
+    public function edit2($id)
+    {
+        $acta = Acta::find($id);
+        $proyectos = Proyecto::all();
+        return view('acta.edit2')->with('acta',$acta)->with('proyectos',$proyectos);
+    }
+
+
     public function index()
     {
  

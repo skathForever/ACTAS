@@ -54,14 +54,13 @@
               {{$reunion->actas->tema}}
               @endif
           </td>
-            
-
             <td>
-            <form action="{{ route('actores.destroy',$reunion->id) }}" method="POST">
+            <form action="{{ route('registroReuniones.destroy',$reunion->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <a href="/actores/{{$reunion->id}}/edit"class="btn btn-info">Editar</a></a>
+                <!-- <a href="/actores/{{$reunion->id}}/edit"class="btn btn-info">Editar</a></a> -->
                 <button type="submit" class="btn btn-danger">Borrar</button>
+            </form>
             </td>
         </tr>
     @endforeach

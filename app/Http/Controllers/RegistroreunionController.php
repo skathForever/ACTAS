@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Acta;
+use App\Models\Actor;
 use App\Models\TipoActa;
 use DB;
 
@@ -83,6 +84,8 @@ class RegistroreunionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $actor=Actor::find($id);
+        $actor->delete();
+        return redirect ("/reunions2/{$actor->id_acta}/reunionByActa");
     }
 }

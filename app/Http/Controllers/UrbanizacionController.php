@@ -13,6 +13,14 @@ class UrbanizacionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function byDistrito($id){
+
+        $ActorUrbanizaciones = ActorUrbanizacion::where('id_distrito',$id)->get();
+        return  $ActorUrbanizaciones;
+    }
+
+
     public function index()
     {
         $urbanizacions=ActorUrbanizacion::all();
@@ -83,7 +91,6 @@ class UrbanizacionController extends Controller
     public function update(Request $request, $id)
     {
         $urbanizacion=ActorUrbanizacion::find($id);
-
         $urbanizacion->nombre=$request->get('nombre');
         $urbanizacion->id_distrito=$request->get('id_distrito');
 

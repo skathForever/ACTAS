@@ -51,9 +51,12 @@
 
   <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Actor Urbanizacion</label>
+
+</br>
         <label for="exampleInputEmail1" class="form-label">Seleccionar Distrito</label>
 
-            <select  id="id_urbanizacion" name="id_urbanizacion" type="text" class="form-control" tabindex="1">
+        <div class="mb-3">
+            <select  id="distrito" name="" type="text" class="form-control" onchange="onSelectDistrito(distrito.value);" tabindex="1">
             <option  value="">-Selecciona-</option>
             @foreach($distritos as $distrito)
             <option  value="{{$distrito->id}}">{{$distrito->nombre}}</option>
@@ -62,18 +65,14 @@
   </div>
   
   
-
   <div class="mb-3">
+  <label for="exampleInputEmail1" class="form-label">Seleccionar Urbanizacion</label>
        
-            <select  id="id_urbanizacion" name="id_urbanizacion" type="text" class="form-control" tabindex="1">
-            <option  value="">-Selecciona-</option>
-            @foreach($actoresUrbanizacion as $actorUrbanizacion)
-            <option  value="{{$actorUrbanizacion->id}}">{{$actorUrbanizacion->nombre}}</option>
-            @endforeach
+            <select  id="urbanizacion" name="id_urbanizacion" class="form-select" aria-label="Default select example" tabindex="1">
             </select>
+
+  
   </div>
-
-
 
   <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Acta</label>
@@ -85,9 +84,36 @@
 
   
 
-  <a href="/actores" class="btn btn-secondary">Cancelar</a>
+  <a href="/reunions2/{{$acta->id}}/reunionByActa" class="btn btn-secondary">Cancelar</a>
 
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+
+    function onSelectDistrito($value){
+        var idDistrito = $value;
+        console.log(idDistrito);
+        if(! idDistrito){
+            $('#urbanizacion').html('<option  value="">-Selecciona-</option>');
+            return;
+        }
+        $.get('/api/urbanizaciones/'+idDistrito+'/distrito', function (data){
+            console.log(data);
+            var html_select = '<option  value="">-Selecciona-</option>';
+            for (var i=0; i<data.length; i++)
+                html_select += '<option  value="'+data[i].id+'">'+data[i].nombre+'</option>';
+            $('#urbanizacion').html(html_select);
+        });
+
+        console.log(data);
+    }
+
+</script>
+
+
+
 @endsection
+
