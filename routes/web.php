@@ -55,7 +55,10 @@ Route::post('/otros2','App\Http\Controllers\ActaController@otro2');
 
 
 
+
 Route::get('/otros3','App\Http\Controllers\ActaController@crear2');
+
+Route::get('/acta/{id}/actaByProyecto','App\Http\Controllers\RegistroreunionController@index2');
 
 Route::get('/acta/{id}/asignarByActa','App\Http\Controllers\ActaController@edit2');
 

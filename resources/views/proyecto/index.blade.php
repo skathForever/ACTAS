@@ -19,6 +19,7 @@
       <th scope="col">Estado</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Scan</th>
+      <th scope="col">Actas</th>
       <th scope="col">Acciones</th>
     </tr>
   </thead>
@@ -30,11 +31,12 @@
             <td>{{$proyecto->estado}}</td>
             <td>{{$proyecto->descripcion}}</td>
             <td>{{$proyecto->scan}}</td>
+            <td>  <a href="/acta/{{$proyecto->id}}/actaByProyecto"class="btn btn-warning">Ver</a></td>
             <td>
             <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <a href="/proyectos/{{$proyecto->id}}/edit"class="btn btn-info">Editar</a></a>
+                <a href="/proyectos/{{$proyecto->id}}/edit"class="btn btn-info">Editar</a>
                 <button type="submit" class="btn btn-danger">Borrar</button>
               </form>
             </td>

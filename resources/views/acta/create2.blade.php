@@ -4,7 +4,7 @@
 
 <p></p>
 
-<h1 class="bg-primary text-white text-center">CREAR  Tipo Acta 2</h1>
+<h1 class="bg-primary text-white text-center">CREAR  Acta 2</h1>
 
 <form action="/otros2" method="POST" enctype="multipart/form-data">
 
@@ -47,7 +47,14 @@
 
   <div class="mb-3">
     <label for="" class="form-label">Relevancia</label>
-    <input id="relevancia" name="relevancia" type="text" class="form-control">
+
+    <select  id="relevancia" name="relevancia" type="text" class="form-control" tabindex="1">
+            <option  value="">-Selecciona-</option>
+            <option  value="baja">Baja</option>
+            <option  value="media">Media</option>
+            <option  value="alta">Alta</option>
+    </select>
+
   </div>
 
   <div class="mb-3">

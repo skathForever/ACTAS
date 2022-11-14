@@ -15,6 +15,15 @@ class RegistroreunionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function index2($id)
+    {
+        $actas = Acta::where('id_proyecto',$id)->get();
+        return view('acta.index4')->with('actas',$actas);
+    }
+
+ 
+
     public function index()
     {
         $actas=Acta::all();
