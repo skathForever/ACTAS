@@ -11,7 +11,7 @@
 <center><a href="actores/create"class="btn btn-primary">Crear</a></center>
 
 
-<table class="table table-dark table-striped mt-4">
+<table id="table" class="table table-dark table-striped mt-4">
 <thead>
     <tr>
       <th scope="col">ID</th>
@@ -20,6 +20,7 @@
       <th scope="col">Actor Organizacion</th>
       <th scope="col">Actor Urbanizacion</th>
       <th scope="col">Acta</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody>

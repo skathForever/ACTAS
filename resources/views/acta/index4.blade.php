@@ -9,14 +9,14 @@
 <p></p>
 
 <div>
-<a href="/otros3"class="btn btn-danger">Crear Acta</a>
-<a href="/proyectos"class="btn btn-primary">Volver</a>
+<a href="/otros3"class="btn btn-danger mb-3">Crear Acta</a>
+<a href="/proyectos"class="btn btn-primary mb-3">Volver</a>
 <!-- <a href="actas/create"class="btn btn-primary">Crear</a> -->
 </div>
 
 
 
-<table class="table table-dark table-striped mt-4">
+<table id="table" class="table table-dark table-striped mt-4">
 <thead>
     <tr>
       <th scope="col">id</th>

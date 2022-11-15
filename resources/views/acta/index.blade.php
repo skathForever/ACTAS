@@ -11,7 +11,7 @@
 <center><a href="actas/create"class="btn btn-primary">Crear</a></center>
 
 
-<table class="table table-dark table-striped mt-4">
+<table id="table" class="table table-dark table-striped mt-4">
 <thead>
     <tr>
       <th scope="col">ID</th>

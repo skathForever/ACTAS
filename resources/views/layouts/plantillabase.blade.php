@@ -50,7 +50,7 @@
     <script>
         $(document).ready(function() {
         $('#table').DataTable({
-             "lengthMenu":[[50,150,-1],[50,150,300,"All"]],
+             "lengthMenu":[[5,15,-1],[5,15,30,"All"]],
             responsive: "true",
             dom: 'Bfrtilp',       
               buttons:[ 
