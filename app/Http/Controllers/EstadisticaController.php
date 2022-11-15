@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Acta;
 use App\Models\Actor;
+use App\Models\Actorexterno;
 use App\Models\Actorgamea;
+use App\Models\Actororganizacion;
+use App\Models\Actorurbanizacion;
 use PhpParser\Node\Stmt\Foreach_;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 class EstadisticaController extends Controller
 {
@@ -25,28 +30,34 @@ class EstadisticaController extends Controller
 
         $actoresGamea = Actorgamea::all();
 
-        foreach ($actoresGamea as  $actorGamea) {
-            $actoresGamea = Actor::where('id_gamea',$actorGamea->id)->get();            
-        }
+        $actoresUrbanizacion = Actorurbanizacion::all();
+        
+        $actoresOrganizacion = Actororganizacion::all();
 
+        $actoresExterno = Actorexterno::all();
 
-        $actoresGamea = Actor::where('id_gamea',20)->get();
-
-        $actoresGamea2 = $actoresGamea->count();
 
         $count = $actores2->countBy(function ($item) {
             return $item['id_gamea'];
         });
 
         
+        $count2 = $actores2->countBy(function ($item) {
+            return $item['id_urbanizacion'];
+        });
 
-        foreach ($count as $key => $value) {
-            $actoresGamea3 = Actorgamea::where('id',$key)->get(); 
-        }
+        $count3 = $actores2->countBy(function ($item) {
+            return $item['id_organizacion'];
+        });
 
+        $count4 = $actores2->countBy(function ($item) {
+            return $item['id_externo'];
+        });
 
-   
-        return view('estadistica.index')->with('actas',$actas)->with('actores',$actores)->with('count',$count)->with('actoresGamea2',$actoresGamea2);
+        return view('estadistica.index')->with('actas',$actas)->with('actores',$actores)
+        ->with('count',$count)->with('count2',$count2)->with('count3',$count3)->with('count4',$count4)
+        ->with('actoresGamea',$actoresGamea)->with('actoresUrbanizacion',$actoresUrbanizacion)
+        ->with('actoresOrganizacion',$actoresOrganizacion)->with('actoresExterno',$actoresExterno);
     }
 
     /**

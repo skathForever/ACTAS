@@ -8,20 +8,151 @@
 
 
 
-<h3 for="">Cantidad de actas registradas : </h3>
-<h3 for="">{{$actas}}</h3>
-
-<h3 for="">Cantidad de actores registradas : </h3>
-<h3 for="">{{$actores}}</h3>
+<h3 style = "display:inline;" for="">Cantidad de actas registradas : </h3>
+<h5 style = "display:inline;" for="">{{$actas}}</h5>
+</br> 
+<h3 style = "display:inline;" for="">Cantidad de actores registrados : </h3>
+<h5 style = "display:inline;" for="">{{$actores}}</h5>
+<!-- 
+<h3 for="">{{$count}}</h3> -->
 
 <h3 for="">Actores por tipo GAMEA : </h3>
 
-@foreach ($count as $key => $value )
 
-@endforeach
+<table id="table" class="table table-dark table-striped mt-4">
+<thead>
+    <tr>
+      <th scope="col">Dependencia</th>
+      <th scope="col">Reuniones Asistidas</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($count as $key => $value)
+    @if($key>0)
+        <tr>
+          <td>
+          @foreach($actoresGamea as $actor)
+
+            @if($key == $actor->id)
+            <h5 style = "display:inline;" for="">{{$actor->nombre}} : </h5>
+            @endif
+
+          @endforeach
+
+          </td>
+          <td>
+            <h5 style = "display:inline;"  for="">{{$value}}</h5>
+          </td>
+
+        </tr>
+      @endif
+    @endforeach
+  </tbody>
+</table>
+
+<h3 for="">Actores por tipo Urbanizacion : </h3>
+
+
+<table id="table2" class="table table-dark table-striped mt-4">
+<thead>
+    <tr>
+      <th scope="col">Organizacion</th>
+      <th scope="col">Reuniones Asistidas</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($count2 as $key => $value)
+    @if($key>0)
+        <tr>
+          <td>
+          @foreach($actoresUrbanizacion as $actor)
+
+            @if($key == $actor->id)
+            <h5 style = "display:inline;" for="">{{$actor->nombre}} : </h5>
+            @endif
+
+          @endforeach
+
+          </td>
+          <td>
+            <h5 style = "display:inline;"  for="">{{$value}}</h5>
+          </td>
+
+        </tr>
+      @endif
+    @endforeach
+  </tbody>
+</table>
+
+<h3 for="">Actores por tipo Organizacion : </h3>
+
+
+<table id="table3" class="table table-dark table-striped mt-4">
+<thead>
+    <tr>
+      <th scope="col">Organizacion</th>
+      <th scope="col">Reuniones Asistidas</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($count3 as $key => $value)
+    @if($key>0)
+        <tr>
+          <td>
+          @foreach($actoresOrganizacion as $actor)
+
+            @if($key == $actor->id)
+            <h5 style = "display:inline;" for="">{{$actor->nombre}} : </h5>
+            @endif
+
+          @endforeach
+
+          </td>
+          <td>
+            <h5 style = "display:inline;"  for="">{{$value}}</h5>
+          </td>
+
+        </tr>
+      @endif
+    @endforeach
+  </tbody>
+</table>
 
 
 
+<h3 for="">Actores por tipo Externos : </h3>
+
+
+<table id="table4" class="table table-dark table-striped mt-4">
+<thead>
+    <tr>
+      <th scope="col">Institucion</th>
+      <th scope="col">Reuniones Asistidas</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($count4 as $key => $value)
+    @if($key>0)
+        <tr>
+          <td>
+          @foreach($actoresExterno as $actor)
+
+            @if($key == $actor->id)
+            <h5 style = "display:inline;" for="">{{$actor->nombre}} : </h5>
+            @endif
+
+          @endforeach
+
+          </td>
+          <td>
+            <h5 style = "display:inline;"  for="">{{$value}}</h5>
+          </td>
+
+        </tr>
+      @endif
+    @endforeach
+  </tbody>
+</table>
 
 
 @endsection

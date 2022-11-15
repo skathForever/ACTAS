@@ -2,17 +2,16 @@
 
 @section('contenido')
 
-<p></p>
-
 <h1 class="bg-primary text-white text-center">PROYECTO</h1>
 
-<P></P>
-
-<center><a href="proyectos/create"class="btn btn-primary">Crear</a></center>
 
 
-<table class="table table-dark table-striped mt-4">
-<thead>
+<a href="proyectos/create"class="btn btn-primary mb-3">Crear</a>
+</br>
+
+
+<table id="table" class="table table-dark table-striped mt-4">
+<thead class="bg-primary text-white">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
@@ -23,7 +22,7 @@
       <th scope="col">Actas</th>
       <th scope="col">Acciones</th>
     </tr>
-  </thead>
+  </thead >
   <tbody>
     @foreach ($proyectos as $proyecto)
         <tr>
