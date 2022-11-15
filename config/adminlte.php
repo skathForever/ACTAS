@@ -352,6 +352,13 @@ return [
             'label'       => "crud",
             'label_color' => 'success',
         ],
+        [
+            'text'        => ' Estadistica',
+            'url'         => 'estadisticas',
+            'icon'        => 'fas fa-file-archive',
+            'label'       => "datos",
+            'label_color' => 'danger',
+        ],
     
         
         ['header' => 'PERFIL DE USUARIO'],

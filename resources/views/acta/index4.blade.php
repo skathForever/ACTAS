@@ -59,7 +59,7 @@
 
   
 
-            <td><a class="btn btn-success" href="Archivos/{{$acta->scan}}" target="blank_">ver</a></td>
+            <td><a class="btn btn-success" href="/Archivos/{{$acta->scan}}" target="blank_">ver</a></td>
             <td>
               <a class="btn btn-primary mr-5"  href="/reunions2/{{$acta->id}}/reunionByActa" target="blank_">registrar</a>
             </td>

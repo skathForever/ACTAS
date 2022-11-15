@@ -46,14 +46,12 @@ Route::resource('registroReuniones', 'App\Http\Controllers\RegistroreunionContro
 
 Route::resource('proyectos', 'App\Http\Controllers\ProyectoController');
 
-
+Route::resource('proyectos', 'App\Http\Controllers\ProyectoController');
 
 
 Route::post('/otros','App\Http\Controllers\ActorController@otro');
 
-Route::post('/otros2','App\Http\Controllers\ActaController@otro2');
-
-
+Route::resource('estadisticas','App\Http\Controllers\EstadisticaController');
 
 
 Route::get('/otros3','App\Http\Controllers\ActaController@crear2');
@@ -70,6 +68,8 @@ Route::put('/acta/{id}/editByActa','App\Http\Controllers\ActaController@update2'
 Route::get('/reunions2/{id}/reunionByActa','App\Http\Controllers\ActorController@reunionByActa');
 
 Route::get('/reunions3/{id}/ActorReunionByActa','App\Http\Controllers\ActorController@actorReunionByActa');
+
+
 
 
 

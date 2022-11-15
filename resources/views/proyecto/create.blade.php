@@ -20,14 +20,24 @@
   </div>
 
   <div class="mb-3">
-    <label for="" class="form-label">Estado</label>
-    <input id="estado" name="estado" type="text" class="form-control" >
+  <label for="" class="form-label">Estado</label>
+    <select  id="estado" name="estado" class="form-select" aria-label="Default select example">
+      <option selected>Seleccionar</option>
+      <option value="1">Inicio</option>
+      <option value="2">En Proceso</option>
+      <option value="3">Terminado</option>
+    </select>
+
   </div>
 
-  <div class="mb-3">
-    <label for="" class="form-label">Descripcion</label>
-    <input id="descripcion" name="descripcion" type="text" class="form-control" >
-  </div>
+
+
+  <div class="input-group">
+  <span class="input-group-text">Descripcion</span>
+  <textarea id="descripcion" name="descripcion" class="form-control" aria-label="With textarea"></textarea>
+</div>
+
+
 
   <div class="mb-3">
     <label for="" class="form-label">Scan</label>

@@ -19,6 +19,7 @@
       <th scope="col">Estado</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Scan</th>
+      <th scope="col">documento</th>
       <th scope="col">Actas</th>
       <th scope="col">Acciones</th>
     </tr>
@@ -28,9 +29,12 @@
         <tr>
             <td>{{$proyecto->id}}</td>
             <td>{{$proyecto->nombre}}</td>
-            <td>{{$proyecto->estado}}</td>
+            <td>
+              {{$proyecto->estado}}
+            </td>
             <td>{{$proyecto->descripcion}}</td>
             <td>{{$proyecto->scan}}</td>
+            <td><a class="btn btn-success" href="Archivos/{{$proyecto->scan}}" target="blank_">ver</a></td>
             <td>  <a href="/acta/{{$proyecto->id}}/actaByProyecto"class="btn btn-warning">Ver</a></td>
             <td>
             <form action="{{ route('proyectos.destroy',$proyecto->id) }}" method="POST">
