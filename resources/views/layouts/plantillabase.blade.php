@@ -12,6 +12,8 @@
 @stop
 
 @section('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
@@ -24,6 +26,11 @@
 @stop
 
 @section('js')
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+
 <script src="https://kit.fontawesome.com/655d53150e.js" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
@@ -44,8 +51,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
-
- 
+    
 
     <script>
         $(document).ready(function() {
