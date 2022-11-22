@@ -46,15 +46,18 @@ Route::resource('registroReuniones', 'App\Http\Controllers\RegistroreunionContro
 
 Route::resource('proyectos', 'App\Http\Controllers\ProyectoController');
 
-Route::resource('proyectos', 'App\Http\Controllers\ProyectoController');
+
 
 
 Route::post('/otros','App\Http\Controllers\ActorController@otro');
+
 
 Route::resource('estadisticas','App\Http\Controllers\EstadisticaController');
 
 
 Route::get('/otros3','App\Http\Controllers\ActaController@crear2');
+Route::post('/otros2','App\Http\Controllers\ActaController@otro2');
+
 
 Route::get('/acta/{id}/actaByProyecto','App\Http\Controllers\RegistroreunionController@index2');
 

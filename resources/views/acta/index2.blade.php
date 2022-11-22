@@ -72,6 +72,7 @@
                 <a href="/actas/{{$acta->id}}/edit"class="btn btn-info">Editar</a></a>
                 <button type="submit" class="btn btn-danger">Borrar</button>
             </td>
+            </form>
         </tr>
     @endforeach
   </tbody>
