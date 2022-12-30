@@ -21,7 +21,7 @@ use App\Http\Controllers\RegActaController;
 */
 
 Route::get('/', function () {
-    return redirect ('registroReuniones');
+    return redirect ('home');
 });
 
 
@@ -75,4 +75,11 @@ Route::get('/reunions3/{id}/ActorReunionByActa','App\Http\Controllers\ActorContr
 
 //Auth::routes('');
 
-Route::get('/home', [App\Http\Controllers\RegistroreunionController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

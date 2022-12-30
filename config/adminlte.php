@@ -16,7 +16,7 @@ return [
 
     'title' => '',
     'title_prefix' => '',
-    'title_postfix' => 'MENU',
+    'title_postfix' => 'ACTAS',
 
     /*
     |--------------------------------------------------------------------------
@@ -311,54 +311,82 @@ return [
             'text' => 'Menu',
             'url'  => 'home',
         ],
-        ['header' => 'ACTAS'],
+        ['header' => 'ACTA'],
+        [
+        'text'    => 'ACTAS',
+        'icon'    => '	fas fa-folder-open',
+        'submenu' => [
+            [
+                'text'        => 'Tipo de Actas',
+                'url'         => 'tipoactas',
+                'icon'        => 'fas fa-user-friends',
+                'label'       => 1,
+                'label_color' => 'success',
+            ],
+            [
+                'text'        => 'Acta',
+                'url'         => 'actas',
+                'icon'        => 'fas fa-user-friends',
+                'label'       => 1,
+                'label_color' => 'success',
+            ],        
+           
+           ],
+        ],
+        
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        
+        ['header' => 'ACTORES'],
         [
-            'text'        => ' Tipo de Actas',
-            'url'         => 'tipoactas',
-            'icon'        => 'fas fa-file-archive',
-            'label'       => "crud",
-            'label_color' => 'success',
+        'text'    => 'ACTORES',
+        'icon'    => '	fas fa-folder-open',
+        'submenu' => [
+            [
+                'text'        => 'Actores',
+                'url'         => 'actores',
+                'icon'        => 'fas fa-user-friends',
+                'label'       => "crud",
+                'label_color' => 'success',
+            ],
+            [
+                'text'        => 'Actores',
+                'url'         => 'registroReuniones',
+                'icon'        => 'fas fa-user-friends',
+                'label'       => "completo",
+                'label_color' => 'success',
+            ],        
+           
+           ],
         ],
+
+        ['header' => 'PROYECTOS Y ESTADISTICAS'],
         [
-            'text'        => ' Acta',
-            'url'         => 'actas',
-            'icon'        => 'fas fa-file-archive',
-            'label'       => "crud",
-            'label_color' => 'success',
+        'text'    => 'PROYECTOS Y ESTADISTICA',
+        'icon'    => '	fas fa-folder-open',
+        'submenu' => [
+            [
+                'text'        => 'Proyectos',
+                'url'         => 'proyectos',
+                'icon'        => 'fas fa-user-friends',
+                'label'       => "crud",
+                'label_color' => 'success',
+            ],
+            [
+                'text'        => 'Estadistica',
+                'url'         => 'estadisticas',
+                'icon'        => 'fas fa-user-friends',
+                'label'       => "completo",
+                'label_color' => 'success',
+            ],        
+           
+           ],
         ],
-        [
-            'text'        => ' Actores',
-            'url'         => 'actores',
-            'icon'        => 'fas fa-file-archive',
-            'label'       => "crud",
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => ' Actores',
-            'url'         => 'registroReuniones',
-            'icon'        => 'fas fa-file-archive',
-            'label'       => "completo",
-            'label_color' => 'info',
-        ],
-        [
-            'text'        => ' Proyectos',
-            'url'         => 'proyectos',
-            'icon'        => 'fas fa-file-archive',
-            'label'       => "crud",
-            'label_color' => 'success',
-        ],
-        [
-            'text'        => ' Estadistica',
-            'url'         => 'estadisticas',
-            'icon'        => 'fas fa-file-archive',
-            'label'       => "datos",
-            'label_color' => 'danger',
-        ],
+       
+       
     
         
         ['header' => 'PERFIL DE USUARIO'],
@@ -493,11 +521,11 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
                 ],
             ],

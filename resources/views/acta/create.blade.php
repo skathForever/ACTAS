@@ -2,22 +2,22 @@
 
 @section('contenido')
 
-<p></p>
 
-<h1 class="bg-primary text-white text-center">CREAR  Tipo Acta</h1>
+
+<h1 class="bg-primary text-white text-center">Crear Tipo Acta</h1>
 
 <form action="/actas" method="POST" enctype="multipart/form-data">
 
-    @csrf    
-    
+  @csrf
+
   <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Tipo Acta</label>
-            <select  id="id_tipo" name="id_tipo" type="text" class="form-control" tabindex="1">
-            <option  value="">-Selecciona-</option>
-            @foreach($tipoactas as $tipoacta)
-            <option  value="{{$tipoacta->id}}">{{$tipoacta->nombre}}</option>
-            @endforeach
-            </select>
+    <label for="exampleInputEmail1" class="form-label">Tipo Acta</label>
+    <select id="id_tipo" name="id_tipo" type="text" class="form-control" tabindex="1">
+      <option value="">-Selecciona-</option>
+      @foreach($tipoactas as $tipoacta)
+      <option value="{{$tipoacta->id}}">{{$tipoacta->nombre}}</option>
+      @endforeach
+    </select>
   </div>
 
 
@@ -63,7 +63,8 @@
 
   <center><a href="/actas" class="btn btn-secondary">Cancelar</a>
 
-<button type="submit" class="btn btn-primary">Guardar</button></center>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </center>
 </form>
 
 @endsection

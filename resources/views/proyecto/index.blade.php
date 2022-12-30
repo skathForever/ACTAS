@@ -9,7 +9,7 @@
 <a href="proyectos/create"class="btn btn-primary mb-3">Crear</a>
 </br>
 
-
+<div class="table-responsive">
 <table id="table" class="table table-dark table-striped mt-4">
 <thead class="bg-primary text-white">
     <tr>
@@ -47,6 +47,8 @@
     @endforeach
   </tbody>
 </table>
+</div>
+
 
 
 @endsection

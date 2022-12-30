@@ -3,65 +3,86 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1> <center>Bienvenidos</center> </h1>
+<h1>Bienvenidos</h1>
 @stop
 
 @section('content')
-    
- 
-  <body>
-    <h1 class="bg-primary text-white text-center">Actor Gamea</h1>
+<p>Registro de Actas</p>
 
-    <div class="container-fluid">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-       <ol class="carousel-indicators">
-         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-       </ol>
-      <div class="carousel-inner">
-      <div class="carousel-item active">
-          <img class="d-block w-100" src="..." alt="First slide">
-      </div>
-      <div class="carousel-item">
-       <img class="d-block w-100" src="..." alt="Second slide">
-      </div>
-      <div class="carousel-item">
-       <img class="d-block w-100" src="..." alt="Third slide">
-      </div>
+<div class="row">
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>150</h3>
+                <p>Actas Registradas</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <p>Actores Registrados</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>44</h3>
+                <p>Usuarios Registrados</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-plus"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3>65</h3>
+                <p>Estadiaticas</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-chart-pie"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <fas class="fas fa-arrow-circle-right">
+            </a>
+        </div>
+    </div>
+
 </div>
-
-    </div>
-
-   
-
-
-  
-
-    <div class="container">
-        @yield('contenido')
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-popRpmFF9JQgExhfw5tZT4I9/CI5e2QcuUZPOVXb1m7qUmeR2b50u+YFEYe1wgzy" crossorigin="anonymous"></script>
-    @yield('js')
-  </body>
-</html>
-
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+<link rel="stylesheet" href="/css/admin_custom.css">
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script>
+    console.log('Hi!');
+</script>
 @stop

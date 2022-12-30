@@ -8,7 +8,9 @@
 @stop
 
 @section('content')
-        @yield('contenido')
+
+@yield('contenido')
+
 @stop
 
 @section('css')

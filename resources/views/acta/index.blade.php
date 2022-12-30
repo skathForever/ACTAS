@@ -10,7 +10,8 @@
 
 <center><a href="actas/create"class="btn btn-primary">Crear</a></center>
 
-
+<div class="table-responsive">
+  
 <table id="table" class="table table-dark table-striped mt-4">
 <thead>
     <tr>
@@ -54,6 +55,8 @@
     @endforeach
   </tbody>
 </table>
+</div>
+
 
 
 @endsection
